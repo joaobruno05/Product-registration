@@ -6,7 +6,7 @@ namespace product_registration_PDI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
