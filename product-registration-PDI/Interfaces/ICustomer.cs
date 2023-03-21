@@ -1,9 +1,9 @@
 ﻿namespace product_registration_PDI.Interfaces
 {
-    interface ICustomer
+    public interface ICustomer
     {
+        public string Register { get; set; }
         public string Name { get; set; }
-        public int Idade { get; set; }
-        public string Job { get; set; }
+        public string Adress { get; set; }
     }
 }

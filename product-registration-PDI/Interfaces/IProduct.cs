@@ -2,7 +2,7 @@
 
 namespace product_registration_PDI.Interfaces
 {
-    interface IProduct
+    public interface IProduct
     {
         public Guid Code { get; set; }
         public string Name { get; set; }
