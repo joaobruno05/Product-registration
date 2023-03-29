@@ -1,20 +1,19 @@
 ﻿using product_registration_PDI.Interfaces;
 using System.Collections.Generic;
 using System;
+using System.Linq;
+using System.Globalization;
 
 namespace product_registration_PDI.Entities
 {
     public class Customer : ICustomer
     {
-        //CPF ou CNPJ
-        public string Register { get; set; }
         public string Name { get; set; }
         public string Adress { get; set; }
         public List<Product> Products { get; set; } = new List<Product>();
 
-        public Customer(string register, string name, string adress, List<Product> products)
+        public Customer(string name, string adress, List<Product> products)
         {
-            Register = register;
             Name = name;
             Adress = adress;
             Products = products;
@@ -28,16 +27,17 @@ namespace product_registration_PDI.Entities
         public void RemoveProduct (Product product)
         {
             Products.Remove(product);
+            
         }
 
-        public double TotalPrice ()
+        public string TotalPrice ()
         {
             double total = 0.0;
             foreach (Product product in Products)
             {
-                total += product.Price; 
+                total += product.Price;
             }
-            return total;
+            return $"O valor total foi igual a R$ {total.ToString("F2", CultureInfo.InvariantCulture)},00";
         }
     }
 }
