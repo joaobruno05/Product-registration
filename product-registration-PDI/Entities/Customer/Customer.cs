@@ -9,35 +9,56 @@ namespace product_registration_PDI.Entities
     public class Customer : ICustomer
     {
         public string Name { get; set; }
-        public string Adress { get; set; }
+        public string Address { get; set; }
         public List<Product> Products { get; set; } = new List<Product>();
 
-        public Customer(string name, string adress, List<Product> products)
+        public Customer()
+        {
+        }
+
+        public Customer(string name, string address)
         {
             Name = name;
-            Adress = adress;
+            Address = address;
+        }
+
+        public Customer(string name, string address, List<Product> products)
+        {
+            Name = name;
+            Address = address;
             Products = products;
         }
 
-        public void AddProduct (Product product)
+        public string CustomerPersonalData()
         {
-            Products.Add(product);
+            return ($"Nome cliente: {Name}\r\n" +
+                    $"Endereço: {Address}");
         }
 
-        public void RemoveProduct (Product product)
+        public void FormatProductsTable(List<Product> products)
         {
-            Products.Remove(product);
-            
+            string result;
+            int index = 1;
+            foreach (Product product in products)
+            {
+                result = ($"Produto {index}\r\n" +
+                          $"Código - {product.Code}\r\n" +
+                          $"Nome - {product.Name}\r\n" +
+                          $"Preço - R${product.Price}");
+                index += 1;
+                Console.WriteLine(result);
+                Console.WriteLine("--------------------------------");
+            }
         }
 
-        public string TotalPrice ()
+        public string TotalPrice(List<Product> products)
         {
             double total = 0.0;
-            foreach (Product product in Products)
+            foreach (Product product in products)
             {
                 total += product.Price;
             }
-            return $"O valor total foi igual a R$ {total.ToString("F2", CultureInfo.InvariantCulture)},00";
+            return $"O valor total foi igual a R${total.ToString("F2", CultureInfo.InvariantCulture)}";
         }
     }
 }
