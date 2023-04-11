@@ -1,6 +1,4 @@
-﻿using product_registration_PDI.Interfaces;
-using System.Collections.Generic;
-using System.Globalization;
+﻿using System.Collections.Generic;
 
 namespace product_registration_PDI.Entities
 {
