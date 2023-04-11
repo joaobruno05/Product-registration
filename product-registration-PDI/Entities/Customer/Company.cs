@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace product_registration_PDI.Entities
 {
     public class Company : Customer
     {
         public string Cnpj { get; set; }
-
-        public Company()
-        {
-        }
 
         public Company(string cnpj)
         {
@@ -27,7 +21,7 @@ namespace product_registration_PDI.Entities
             Cnpj = cnpj;
         }
 
-        public bool validateCnpj(string cnpj)
+        public bool ValidateCnpj(string cnpj)
         {
             string resultCnpj = cnpj.Replace(".", "");
             resultCnpj = resultCnpj.Replace("/", "");
