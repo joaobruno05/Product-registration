@@ -22,11 +22,9 @@ namespace product_registration_PDI.Entities
 
         public bool ValidateCpf(string cpf)
         {
-            string resultCpf = cpf.Replace(".", "");
-            resultCpf = resultCpf.Replace("-", "");
+            string resultCpf = cpf.Replace(".", "").Replace("-", "");
 
-            if (resultCpf.Length != 11) return false;
-            return true;
+            return resultCpf.Length == 11;
         }
     }
 }

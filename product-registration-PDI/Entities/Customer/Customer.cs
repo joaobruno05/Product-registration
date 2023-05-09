@@ -30,8 +30,7 @@ namespace product_registration_PDI.Entities
 
         public string CustomerPersonalData()
         {
-            return ($"Nome cliente: {Name}\r\n" +
-                    $"Endereço: {Address}");
+            return $"Nome cliente: {Name}{Environment.NewLine}Endereço: {Address}";
         }
 
         public void FormatProductsTable(List<Product> products)
@@ -40,11 +39,10 @@ namespace product_registration_PDI.Entities
             int index = 1;
             foreach (Product product in products)
             {
-                result = ($"Produto {index}\r\n" +
+                result =  $"Produto {index++}\r\n" +
                           $"Código - {product.Code}\r\n" +
                           $"Nome - {product.Name}\r\n" +
-                          $"Preço - R${product.Price}");
-                index += 1;
+                          $"Preço - R${product.Price}";
                 Console.WriteLine(result);
                 Console.WriteLine("--------------------------------");
             }

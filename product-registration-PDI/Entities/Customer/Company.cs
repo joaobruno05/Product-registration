@@ -23,12 +23,9 @@ namespace product_registration_PDI.Entities
 
         public bool ValidateCnpj(string cnpj)
         {
-            string resultCnpj = cnpj.Replace(".", "");
-            resultCnpj = resultCnpj.Replace("/", "");
-            resultCnpj = resultCnpj.Replace("-", "");
+            string resultCnpj = cnpj.Replace(".", "").Replace("/", "").Replace("-", "");
 
-            if (resultCnpj.Length != 14) return false;
-            return true;
+            return resultCnpj.Length == 14;
         }
     }
 }
