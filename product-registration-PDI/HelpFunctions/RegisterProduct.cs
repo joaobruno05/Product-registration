@@ -8,7 +8,7 @@ namespace product_registration_PDI.HelpFunctions
 {
     public static class RegisterProduct
     {
-        public static List<Product> AddProducts()
+        public static List<Product> ListAddedProducts()
         {
             List<Product> listProducts = new List<Product>();
             char input = 'n';

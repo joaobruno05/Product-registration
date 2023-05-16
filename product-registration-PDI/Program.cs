@@ -30,7 +30,7 @@ namespace product_registration_PDI
                 customer.Address = customerRegister[1];
                 
 
-                var listProducts = RegisterProduct.AddProducts();
+                var listProducts = RegisterProduct.ListAddedProducts();
 
                 Console.WriteLine("--------------------------------");
                 Console.WriteLine("Carrinho:");
