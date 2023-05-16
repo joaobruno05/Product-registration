@@ -1,31 +1,29 @@
 ﻿using System.Collections.Generic;
+using System;
 
 namespace product_registration_PDI.Entities
 {
     public class Company : Customer
     {
-        public string Cnpj { get; set; }
-
-        public Company(string cnpj)
+        public Company()
         {
-            Cnpj = cnpj;
+
+        }
+        public Company(string registrationNumber) : base(registrationNumber)
+        {
+            RegistrationNumber = registrationNumber;
         }
 
-        public Company(string name, string address, string cnpj) : base(name, address)
+        public Company(string name, string address, string registrationNumber) : base(name, address, registrationNumber)
         {
-            Cnpj = cnpj;
+            RegistrationNumber = registrationNumber;
         }
 
-        public Company(string name, string address, List<Product> products, string cnpj) : base(name, address, products)
+        public override bool ValidateUser(int charactersNumbers = 14)
         {
-            Cnpj = cnpj;
-        }
+            string resultCnpj = RegistrationNumber.Replace(".", "").Replace("/", "").Replace("-", "");
 
-        public bool ValidateCnpj(string cnpj)
-        {
-            string resultCnpj = cnpj.Replace(".", "").Replace("/", "").Replace("-", "");
-
-            return resultCnpj.Length == 14;
+            return resultCnpj.Length == charactersNumbers;
         }
     }
 }

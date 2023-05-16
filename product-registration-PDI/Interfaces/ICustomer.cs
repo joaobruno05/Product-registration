@@ -7,8 +7,10 @@ namespace product_registration_PDI.Interfaces
     {
         public string Name { get; set; }
         public string Address { get; set; }
+        public string RegistrationNumber { get; set; }
         public List<Product> Products { get; set; }
 
+        public bool ValidateUser(int charactersNumbers);
         public string CustomerPersonalData();
         public void FormatProductsTable(List<Product> products);
         public string TotalPrice(List<Product> products);

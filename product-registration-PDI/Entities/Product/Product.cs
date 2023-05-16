@@ -1,5 +1,7 @@
 ﻿using product_registration_PDI.Interfaces;
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 
 namespace product_registration_PDI.Entities
 {
@@ -8,6 +10,10 @@ namespace product_registration_PDI.Entities
         public Guid Code { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }
+
+        public Product()
+        {
+        }
 
         public Product(string name, double price)
         {

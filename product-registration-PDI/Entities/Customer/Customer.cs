@@ -9,10 +9,16 @@ namespace product_registration_PDI.Entities
     {
         public string Name { get; set; }
         public string Address { get; set; }
+        public string RegistrationNumber { get; set; }
         public List<Product> Products { get; set; } = new List<Product>();
 
         public Customer()
         {
+        }
+
+        public Customer(string registrationNumber)
+        {
+            RegistrationNumber = registrationNumber;
         }
 
         public Customer(string name, string address)
@@ -21,11 +27,16 @@ namespace product_registration_PDI.Entities
             Address = address;
         }
 
-        public Customer(string name, string address, List<Product> products)
+        public Customer(string name, string address, string cpf)
         {
             Name = name;
             Address = address;
-            Products = products;
+            RegistrationNumber = cpf;
+        }
+
+        public virtual bool ValidateUser(int charactersNumbers)
+        {
+            return RegistrationNumber.Length <= charactersNumbers;
         }
 
         public string CustomerPersonalData()

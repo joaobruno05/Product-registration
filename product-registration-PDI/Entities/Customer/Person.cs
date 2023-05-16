@@ -1,30 +1,28 @@
 ﻿using System.Collections.Generic;
+using System;
 
 namespace product_registration_PDI.Entities
 {
     public class Person : Customer
     {
-        public string Cpf { get; set; }
+        public Person()
+        {
 
-        public Person(string cpf)
-        {
-            Cpf = cpf;
         }
-        public Person(string name, string address, string cpf) : base(name, address)
+        public Person(string registrationNumber) : base(registrationNumber)
         {
-            Cpf = cpf;
+            RegistrationNumber = registrationNumber;
         }
-
-        public Person(string name, string address, List<Product> products, string cpf) : base(name, address, products)
+        public Person(string name, string address, string registrationNumber) : base(name, address, registrationNumber)
         {
-            Cpf = cpf;
+            RegistrationNumber = registrationNumber;
         }
 
-        public bool ValidateCpf(string cpf)
+        public override bool ValidateUser(int charactersNumbers = 11)
         {
-            string resultCpf = cpf.Replace(".", "").Replace("-", "");
+            string resultCpf = RegistrationNumber.Replace(".", "").Replace("-", "");
 
-            return resultCpf.Length == 11;
+            return resultCpf.Length == charactersNumbers;
         }
     }
 }
