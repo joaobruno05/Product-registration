@@ -13,7 +13,7 @@ namespace product_registration_PDI
             Console.WriteLine("Vamos começar a colocar suas compras no carrinho :)");
 
             string clientType = CustomerType.ChooseCustomerType();
-            string[] customerRegister = new string[2];
+            string[] customerRegister = new string[3];
 
             if (clientType != "Other")
             {
@@ -28,16 +28,16 @@ namespace product_registration_PDI
 
                 customer.Name = customerRegister[0];
                 customer.Address = customerRegister[1];
+                customer.RegistrationNumber = customerRegister[2];
                 
 
                 var listProducts = RegisterProduct.ListAddedProducts();
 
                 Console.WriteLine("--------------------------------");
                 Console.WriteLine("Carrinho:");
-                Console.WriteLine(customer.CustomerPersonalData());
+                Console.WriteLine(customer.CustomerPersonalData(clientType));
                 Console.WriteLine("--------------------------------");
                 customer.FormatProductsTable(listProducts);
-                Console.WriteLine("--------------------------------");
                 Console.WriteLine(customer.TotalPrice(listProducts));
             }
         }
