@@ -11,7 +11,8 @@ namespace product_registration_PDI.Interfaces
         public List<Product> Products { get; set; }
 
         public bool ValidateUser(int charactersNumbers);
-        public string CustomerPersonalData();
+        public string MaskRegistrationNumber(string clientType);
+        public string CustomerPersonalData(string clientType);
         public void FormatProductsTable(List<Product> products);
         public string TotalPrice(List<Product> products);
     }
