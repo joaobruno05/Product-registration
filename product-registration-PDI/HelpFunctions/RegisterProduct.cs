@@ -21,7 +21,7 @@ namespace product_registration_PDI.HelpFunctions
 
                 listProducts.Add(new Product(productName, price));
 
-                Console.WriteLine("Deseja finalizar? s / n");
+                Console.Write("Deseja finalizar? s / n: ");
                 char result = char.Parse(Console.ReadLine());
 
                 if (result == 's') input = 's';
