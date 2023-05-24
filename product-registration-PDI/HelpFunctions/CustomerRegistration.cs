@@ -23,7 +23,7 @@ namespace product_registration_PDI.HelpFunctions
             Console.WriteLine("Digite o endereço da sua residência:");
             string userAddress = Console.ReadLine();
 
-            string[] objectUser = new string[2] { userName, userAddress };
+            string[] objectUser = new string[3] { userName, userAddress, cpf };
             return objectUser;
         }
 
@@ -45,7 +45,7 @@ namespace product_registration_PDI.HelpFunctions
             Console.WriteLine("Digite o endereço da sua empresa:");
             string companyAddress = Console.ReadLine();
 
-            string[] objectCompany = new string[2] { companyName, companyAddress };
+            string[] objectCompany = new string[3] { companyName, companyAddress, cnpj };
             return objectCompany;
         }
     }
