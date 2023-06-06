@@ -5,7 +5,7 @@ using System.Globalization;
 
 namespace product_registration_PDI.HelpFunctions
 {
-    public static class RegisterProduct
+    public class RegisterProduct
     {
         public static List<Product> ListAddedProducts()
         {

@@ -19,11 +19,11 @@ namespace product_registration_PDI.Entities
             RegistrationNumber = registrationNumber;
         }
 
-        public override bool ValidateUser(int charactersNumbers = 14)
+        public override bool ValidateUser()
         {
             string resultCnpj = RegistrationNumber.Replace(".", "").Replace("/", "").Replace("-", "");
 
-            return resultCnpj.Length == charactersNumbers;
+            return resultCnpj.Length == 14;
         }
     }
 }

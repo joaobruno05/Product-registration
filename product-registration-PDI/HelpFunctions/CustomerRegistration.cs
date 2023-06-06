@@ -3,7 +3,7 @@ using System;
 
 namespace product_registration_PDI.HelpFunctions
 {
-    public static class CustomerRegistration
+    public class CustomerRegistration
     {
         public static string[] RegisterUser()
         {

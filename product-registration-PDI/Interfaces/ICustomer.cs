@@ -10,7 +10,7 @@ namespace product_registration_PDI.Interfaces
         public string RegistrationNumber { get; set; }
         public List<Product> Products { get; set; }
 
-        public bool ValidateUser(int charactersNumbers);
+        public bool ValidateUser();
         public string MaskRegistrationNumber(string clientType);
         public string CustomerPersonalData(string clientType);
         public void FormatProductsTable(List<Product> products);

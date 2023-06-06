@@ -18,11 +18,11 @@ namespace product_registration_PDI.Entities
             RegistrationNumber = registrationNumber;
         }
 
-        public override bool ValidateUser(int charactersNumbers = 11)
+        public override bool ValidateUser()
         {
             string resultCpf = RegistrationNumber.Replace(".", "").Replace("-", "");
 
-            return resultCpf.Length == charactersNumbers;
+            return resultCpf.Length == 11;
         }
     }
 }

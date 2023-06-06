@@ -34,9 +34,9 @@ namespace product_registration_PDI.Entities
             RegistrationNumber = registrationNumber;
         }
 
-        public virtual bool ValidateUser(int charactersNumbers)
+        public virtual bool ValidateUser()
         {
-            return RegistrationNumber.Length <= charactersNumbers;
+            return true;
         }
 
         public string MaskRegistrationNumber(string clientType)

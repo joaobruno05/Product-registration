@@ -2,7 +2,7 @@
 
 namespace product_registration_PDI.HelpFunctions
 {
-    public static class CustomerType
+    public class CustomerType
     {
         public static string ChooseCustomerType()
         {
